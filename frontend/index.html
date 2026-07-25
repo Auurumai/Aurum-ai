@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURUM AI</title>
+    <title>AURUM AI | Gold Intelligence</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,29 +15,75 @@
     <p>Institutional Gold Intelligence Platform</p>
 </header>
 
+
 <main class="container">
 
-    <section class="card">
-        <h2>Upload Gold Chart</h2>
+    <section class="card upload-card">
+
+        <h2>📊 Gold Chart Analysis</h2>
+
+        <p>
+            Upload XAUUSD chart image for AI-powered analysis
+        </p>
 
         <input type="file" id="chart">
 
+
         <button id="analyzeBtn">
-            🚀 Analyze with AI
+            🚀 Analyze Chart
         </button>
+
     </section>
 
-    <section class="card">
-        <h2>AI Analysis Result</h2>
 
-        <p><strong>Trend:</strong> Waiting...</p>
 
-        <p><strong>Confidence:</strong> --%</p>
+    <section class="card result-card">
 
-        <p><strong>Recommendation:</strong> Waiting...</p>
+        <h2>🤖 AI Intelligence Report</h2>
+
+
+        <div class="result">
+            <h3>Market Direction</h3>
+            <p id="trend">
+                Waiting for analysis...
+            </p>
+        </div>
+
+
+        <div class="result">
+            <h3>Confidence Score</h3>
+            <p id="confidence">
+                --%
+            </p>
+        </div>
+
+
+        <div class="result">
+            <h3>Trading Insight</h3>
+            <p id="recommendation">
+                Waiting...
+            </p>
+        </div>
+
+
+        <div class="result">
+            <h3>AI Modules</h3>
+
+            <ul>
+                <li>Gann Square 9</li>
+                <li>Gann Square 144</li>
+                <li>Smart Money Concepts</li>
+                <li>Market Structure</li>
+                <li>Fibonacci Analysis</li>
+            </ul>
+
+        </div>
+
+
     </section>
 
 </main>
+
 
 <script src="script.js"></script>
 
