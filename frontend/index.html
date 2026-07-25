@@ -1,93 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AURUM AI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURUM AI</title>
 
-<style>
-body{
-margin:0;
-background:#0d1117;
-color:white;
-font-family:Arial,sans-serif;
-text-align:center;
-}
-
-header{
-padding:40px;
-background:#161b22;
-}
-
-h1{
-color:#FFD700;
-font-size:42px;
-}
-
-p{
-color:#cccccc;
-}
-
-.container{
-margin:40px;
-}
-
-button{
-background:#FFD700;
-border:none;
-padding:15px 30px;
-font-size:18px;
-border-radius:10px;
-cursor:pointer;
-}
-
-button:hover{
-background:#f0c000;
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<h1>🟨 AURUM AI</h1>
-<p style="font-size:18px; color:#FFD700;">
-Institutional Gold Intelligence Platform
-</p>
-<p>Institutional Gold Intelligence Platform</p>
+<header class="header">
+    <h1>🟨 AURUM AI</h1>
+    <p>Institutional Gold Intelligence Platform</p>
 </header>
 
-<div class="container">
-<h2>Analyze Gold Charts with AI</h2>
+<main class="container">
 
-<p>Upload a Gold (XAUUSD) chart and receive an AI-powered analysis.</p>
+    <section class="card">
+        <h2>Upload Gold Chart</h2>
 
-<input type="file" accept="image/*">
+        <input type="file" id="chart">
 
-<br><br>
+        <button id="analyzeBtn">
+            🚀 Analyze with AI
+        </button>
+    </section>
 
-<button style="
-background:#FFD700;
-color:#111;
-padding:15px 35px;
-font-size:18px;
-font-weight:bold;
-border:none;
-border-radius:12px;
-cursor:pointer;">
-🚀 Analyze with AI
-</button>
+    <section class="card">
+        <h2>AI Analysis Result</h2>
 
-<div style="margin-top:30px; padding:20px; border:1px solid #FFD700; border-radius:10px; background:#1b1b1b;">
-    <h3>AI Analysis Result</h3>
-    <p>Trend: Waiting for analysis...</p>
-    <p>Confidence Score: --%</p>
-</div>
+        <p><strong>Trend:</strong> Waiting...</p>
 
-</div>
+        <p><strong>Confidence:</strong> --%</p>
 
+        <p><strong>Recommendation:</strong> Waiting...</p>
+    </section>
+
+</main>
 
 <script src="script.js"></script>
+
 </body>
 </html>
-
