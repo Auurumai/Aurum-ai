@@ -1,11 +1,46 @@
-const analyzeBtn = document.getElementById("analyzeBtn");
+document.addEventListener("DOMContentLoaded", () => {
 
-analyzeBtn.addEventListener("click", function () {
+    const analyzeBtn = document.getElementById("analyzeBtn");
+    const chartInput = document.getElementById("chart");
 
-    const result = document.querySelectorAll(".card p");
+    const trend = document.getElementById("trend");
+    const confidence = document.getElementById("confidence");
+    const recommendation = document.getElementById("recommendation");
+    const preview = document.getElementById("preview");
 
-    result[0].innerHTML = "<strong>Trend:</strong> Bullish 📈";
-    result[1].innerHTML = "<strong>Confidence:</strong> 92%";
-    result[2].innerHTML = "<strong>Recommendation:</strong> BUY";
+    // معاينة الصورة
+    if (chartInput && preview) {
+        chartInput.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = "block";
+            }
+
+        });
+    }
+
+    // تحليل الشارت
+    if (analyzeBtn) {
+
+        analyzeBtn.addEventListener("click", function () {
+
+            if (trend) {
+                trend.innerHTML = "<strong>Trend:</strong> Bullish 📈";
+            }
+
+            if (confidence) {
+                confidence.innerHTML = "<strong>Confidence:</strong> 92%";
+            }
+
+            if (recommendation) {
+                recommendation.innerHTML = "<strong>Recommendation:</strong> BUY";
+            }
+
+        });
+
+    }
 
 });
