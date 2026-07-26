@@ -102,6 +102,23 @@ input.addEventListener("change", function () {
         preview.style.display = "block";
     }
 });
+<script>
+const input = document.getElementById("chartImage");
+const preview = document.getElementById("preview");
+
+input.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    }
+});
+
+const analyzeBtn = document.getElementById("analyzeBtn");
+
+analyzeBtn.addEventListener("click", function () {
+    alert("Analysis started!");
+});
 </script>
 </body>
   </html>
