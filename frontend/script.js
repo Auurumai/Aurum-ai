@@ -4,53 +4,102 @@ document.addEventListener("DOMContentLoaded", () => {
     const chartInput = document.getElementById("chart");
     const preview = document.getElementById("preview");
 
-    // AI Report
-    const trend = document.getElementById("trend");
-    const confidence = document.getElementById("confidence");
-    const recommendation = document.getElementById("recommendation");
-    const risk = document.getElementById("risk");
-    const timeframe = document.getElementById("timeframe");
-    const status = document.getElementById("status");
-
-    // Market Structure
-    const bos = document.getElementById("bos");
-    const choch = document.getElementById("choch");
-    const direction = document.getElementById("direction");
-    const support = document.getElementById("support");
-    const resistance = document.getElementById("resistance");
-
     // Image Preview
-    if (chartInput && preview) {
-        chartInput.addEventListener("change", function () {
-            const file = this.files[0];
+    chartInput.addEventListener("change", function () {
+        const file = this.files[0];
 
-            if (file) {
-                preview.src = URL.createObjectURL(file);
-                preview.style.display = "block";
-            }
-        });
-    }
+        if (file) {
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = "block";
+        }
+    });
 
-    // Analyze
-    if (analyzeBtn) {
-        analyzeBtn.addEventListener("click", function () {
+    // Analyze Button
+    analyzeBtn.addEventListener("click", function () {
+
+        analyzeBtn.disabled = true;
+        analyzeBtn.innerHTML = "⏳ Analyzing...";
+
+        setTimeout(() => {
 
             // AI Report
-            trend.innerHTML = "<strong>📈 Market Trend:</strong> Bullish";
-            confidence.innerHTML = "<strong>🎯 Confidence Score:</strong> 92%";
-            recommendation.innerHTML = "<strong>💰 Recommendation:</strong> BUY";
-            risk.innerHTML = "<strong>⚠️ Risk Level:</strong> LOW";
-            timeframe.innerHTML = "<strong>🕒 Timeframe:</strong> 1H";
-            status.innerHTML = "<strong>📊 Market Status:</strong> Strong Uptrend";
+            document.getElementById("trend").innerHTML =
+                "<strong>📈 Market Trend:</strong> Bullish";
+
+            document.getElementById("confidence").innerHTML =
+                "<strong>🎯 Confidence Score:</strong> 92%";
+
+            document.getElementById("recommendation").innerHTML =
+                "<strong>💰 Recommendation:</strong> BUY";
+
+            document.getElementById("risk").innerHTML =
+                "<strong>⚠️ Risk Level:</strong> LOW";
+
+            document.getElementById("timeframe").innerHTML =
+                "<strong>🕒 Timeframe:</strong> 1H";
+
+            document.getElementById("status").innerHTML =
+                "<strong>📊 Market Status:</strong> Strong Uptrend";
 
             // Market Structure
-            bos.innerHTML = "<strong>🔹 BOS:</strong> Confirmed";
-            choch.innerHTML = "<strong>🔸 CHoCH:</strong> Bullish";
-            direction.innerHTML = "<strong>📈 Direction:</strong> Uptrend";
-            support.innerHTML = "<strong>🟢 Support:</strong> 3350.00";
-            resistance.innerHTML = "<strong>🔴 Resistance:</strong> 3385.00";
+            document.getElementById("bos").innerHTML =
+                "<strong>🔹 BOS:</strong> Confirmed";
 
-        });
-    }
+            document.getElementById("choch").innerHTML =
+                "<strong>🔸 CHoCH:</strong> Bullish";
+
+            document.getElementById("direction").innerHTML =
+                "<strong>📈 Direction:</strong> Uptrend";
+
+            document.getElementById("support").innerHTML =
+                "<strong>🟢 Support:</strong> 3350.00";
+
+            document.getElementById("resistance").innerHTML =
+                "<strong>🔴 Resistance:</strong> 3385.00";
+
+            // Smart Money Concepts
+            document.getElementById("orderblock").innerHTML =
+                "<strong>🟩 Order Block:</strong> Bullish";
+
+            document.getElementById("fvg").innerHTML =
+                "<strong>🟪 Fair Value Gap:</strong> Detected";
+
+            document.getElementById("liquidity").innerHTML =
+                "<strong>💧 Liquidity:</strong> Buy Side";
+
+            document.getElementById("sweep").innerHTML =
+                "<strong>⚡ Liquidity Sweep:</strong> Confirmed";
+
+            document.getElementById("breaker").innerHTML =
+                "<strong>📦 Breaker Block:</strong> Active";
+
+            document.getElementById("mitigation").innerHTML =
+                "<strong>🎯 Mitigation Block:</strong> Valid";
+
+            // Gann
+            document.getElementById("gann9").innerHTML =
+                "<strong>Square of 9:</strong> Bullish";
+
+            document.getElementById("gann144").innerHTML =
+                "<strong>Square 144:</strong> Bullish";
+
+            // Fibonacci
+            document.getElementById("fib").innerHTML =
+                "<strong>Key Level:</strong> 61.8%";
+
+            // News
+            document.getElementById("news").innerHTML =
+                "No high-impact economic news.";
+
+            // AI Reasoning
+            document.getElementById("reason").innerHTML =
+                "AI detected a bullish trend, confirmed BOS, bullish Order Block, and support at Fibonacci 61.8%. Recommendation: BUY.";
+
+            analyzeBtn.innerHTML = "Analyze with AI";
+            analyzeBtn.disabled = false;
+
+        }, 2000);
+
+    });
 
 });
