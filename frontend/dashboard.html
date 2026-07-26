@@ -1,124 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURUM AI Dashboard</title>
 
-<title>AURUM AI Dashboard</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-<h1>⚜ AURUM AI</h1>
-<div class="subtitle">
-Institutional Gold Intelligence Platform
-</div>
-</header>
+    <div class="header">
+        <h1>🟨 AURUM AI</h1>
+        <p class="subtitle">
+            Institutional Gold Intelligence Platform
+        </p>
+    </div>
 
+    <div class="container">
 
-<div class="container">
+        <!-- Upload Card -->
+        <div class="card">
+            <h2>📊 Gold Chart Analysis</h2>
 
-<div class="card">
-<h2>Chart Analyzer</h2>
+            <input type="file" id="chart" accept="image/*">
 
-<div class="upload">
-    <input type="file" id="chartImage" accept="image/*">
-</div>
+            <img id="preview"
+                 style="display:none;width:100%;margin-top:20px;border-radius:10px;">
 
+            <button id="analyzeBtn">
+                Analyze with AI
+            </button>
+        </div>
 
-<br>
-<img id="preview" style="display:none;width:100%;margin-top:20px;border-radius:10px;">
-<button id="analyzeBtn">
-    Analyze Chart
-</button>
+        <!-- AI Report -->
+        <div class="card">
+            <h2>🤖 AI Intelligence Report</h2>
 
-</div>
+            <p id="trend">
+                <strong>Trend:</strong> Waiting...
+            </p>
 
-</div>
+            <p id="confidence">
+                <strong>Confidence:</strong> --%
+            </p>
 
+            <p id="recommendation">
+                <strong>Recommendation:</strong> Waiting...
+            </p>
 
-<div class="card">
+        </div>
 
-<h2>AI Market Analysis</h2>
+    </div>
 
-<p>
-Trend: Waiting for analysis...
-</p>
+    <script src="script.js"></script>
 
-<p>
-Market Structure: Not detected
-</p>
-
-<p>
-Gann Square 9 / 144: Pending
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h2>AI Confidence Score</h2>
-
-<div class="score">
--- %
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>Risk Management</h2>
-
-<p>
-Entry: --
-</p>
-
-<p>
-Stop Loss: --
-</p>
-
-<p>
-Take Profit: --
-</p>
-
-</div>
-
-
-</div>
-<script>
-const input = document.getElementById("chartImage");
-const preview = document.getElementById("preview");
-
-input.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-        preview.src = URL.createObjectURL(file);
-        preview.style.display = "block";
-    }
-});
-<script>
-const input = document.getElementById("chartImage");
-const preview = document.getElementById("preview");
-
-input.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-        preview.src = URL.createObjectURL(file);
-        preview.style.display = "block";
-    }
-});
-
-const analyzeBtn = document.getElementById("analyzeBtn");
-
-analyzeBtn.addEventListener("click", function () {
-    alert("Analysis started!");
-});
-</script>
 </body>
-  </html>
+</html>
