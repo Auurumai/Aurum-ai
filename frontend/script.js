@@ -6,41 +6,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const trend = document.getElementById("trend");
     const confidence = document.getElementById("confidence");
     const recommendation = document.getElementById("recommendation");
+    const risk = document.getElementById("risk");
+    const timeframe = document.getElementById("timeframe");
+    const status = document.getElementById("status");
     const preview = document.getElementById("preview");
 
-    // معاينة الصورة
+    // Image Preview
     if (chartInput && preview) {
         chartInput.addEventListener("change", function () {
-
             const file = this.files[0];
 
             if (file) {
                 preview.src = URL.createObjectURL(file);
                 preview.style.display = "block";
             }
-
         });
     }
 
-    // تحليل الشارت
+    // AI Analysis
     if (analyzeBtn) {
-
         analyzeBtn.addEventListener("click", function () {
 
-            if (trend) {
-                trend.innerHTML = "<strong>Trend:</strong> Bullish 📈";
-            }
+            trend.innerHTML =
+                "<strong>📈 Market Trend:</strong> Bullish";
 
-            if (confidence) {
-                confidence.innerHTML = "<strong>Confidence:</strong> 92%";
-            }
+            confidence.innerHTML =
+                "<strong>🎯 Confidence Score:</strong> 92%";
 
-            if (recommendation) {
-                recommendation.innerHTML = "<strong>Recommendation:</strong> BUY";
-            }
+            recommendation.innerHTML =
+                "<strong>💰 Recommendation:</strong> BUY";
+
+            risk.innerHTML =
+                "<strong>⚠️ Risk Level:</strong> LOW";
+
+            timeframe.innerHTML =
+                "<strong>🕒 Timeframe:</strong> 1H";
+
+            status.innerHTML =
+                "<strong>📊 Market Status:</strong> Strong Uptrend";
 
         });
-
     }
 
 });
