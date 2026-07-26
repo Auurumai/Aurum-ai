@@ -93,6 +93,17 @@ Take Profit: --
 
 
 </div>
+<script>
+const input = document.getElementById("chartImage");
+const preview = document.getElementById("preview");
 
+input.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    }
+});
+</script>
 </body>
   </html>
