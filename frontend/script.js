@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const formData = new FormData();
 formData.append("chart", file);
-
+const API_URL = "https://aurum-ai-api.onrender.com/analyze";
 // سيتم إرسال الصورة إلى محرك AURUM AI لاحقًا
 setTimeout(() => {
 
