@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Analyze Button
     analyzeBtn.addEventListener("click", function () {
-
+if (chartInput.files.length === 0) {
+    alert("Please choose a chart image first.");
+    return;
+}
         analyzeBtn.disabled = true;
         analyzeBtn.innerHTML = "⏳ Analyzing...";
 
