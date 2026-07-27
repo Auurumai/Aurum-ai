@@ -30,7 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
         analyzeBtn.disabled = true;
         analyzeBtn.innerHTML = "🤖 AI is analyzing the chart...";
 
-        setTimeout(() => {
+        const file = chartInput.files[0];
+
+const formData = new FormData();
+formData.append("chart", file);
+
+// سيتم إرسال الصورة إلى محرك AURUM AI لاحقًا
+setTimeout(() => {
 
             // AI Report
             const trends = ["Bullish", "Bearish", "Sideways"];
