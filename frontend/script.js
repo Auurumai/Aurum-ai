@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         analyzeBtn.disabled = true;
-        analyzeBtn.innerHTML = "⏳ Analyzing...";
+        analyzeBtn.innerHTML = "🤖 AI is analyzing the chart...";
 
         setTimeout(() => {
 
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("reason").innerHTML =
                 "AI detected a bullish trend, confirmed BOS, bullish Order Block, Fibonacci 61.8% support, and recommends BUY.";
 
-            analyzeBtn.innerHTML = "✅ Analysis Complete";
+            analyzeBtn.innerHTML = "🔍 Analyze with AI";
             analyzeBtn.disabled = false;
 
         }, 2000);
