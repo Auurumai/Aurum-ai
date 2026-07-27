@@ -33,8 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
 
             // AI Report
-            document.getElementById("trend").innerHTML =
-                "<strong>📈 Market Trend:</strong> Bullish";
+            const trends = ["Bullish", "Bearish", "Sideways"];
+const trend = trends[Math.floor(Math.random() * trends.length)];
+
+document.getElementById("trend").innerHTML =
+    "<strong>📈 Market Trend:</strong> " + trend;
 
             document.getElementById("confidence").innerHTML =
                 "<strong>🎯 Confidence Score:</strong> 92%";
