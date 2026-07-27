@@ -6,20 +6,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Image Preview
     chartInput.addEventListener("change", function () {
+
         const file = this.files[0];
 
         if (file) {
             preview.src = URL.createObjectURL(file);
             preview.style.display = "block";
+        } else {
+            preview.style.display = "none";
         }
+
     });
 
     // Analyze Button
     analyzeBtn.addEventListener("click", function () {
-if (chartInput.files.length === 0) {
-    alert("Please choose a chart image first.");
-    return;
-}
+
+        // Check if image selected
+        if (chartInput.files.length === 0) {
+            alert("Please choose a chart image first.");
+            return;
+        }
+
         analyzeBtn.disabled = true;
         analyzeBtn.innerHTML = "⏳ Analyzing...";
 
@@ -42,9 +49,9 @@ if (chartInput.files.length === 0) {
                 "<strong>🕒 Timeframe:</strong> 1H";
 
             document.getElementById("status").innerHTML =
-                "<strong>📊 Market Status:</strong> Strong Uptrend";
-
-            // Market Structure
+               
+            "<strong>📊 Market Status:</strong> Strong Uptrend";
+                        // Market Structure
             document.getElementById("bos").innerHTML =
                 "<strong>🔹 BOS:</strong> Confirmed";
 
@@ -96,9 +103,9 @@ if (chartInput.files.length === 0) {
 
             // AI Reasoning
             document.getElementById("reason").innerHTML =
-                "AI detected a bullish trend, confirmed BOS, bullish Order Block, and support at Fibonacci 61.8%. Recommendation: BUY.";
+                "AI detected a bullish trend, confirmed BOS, bullish Order Block, Fibonacci 61.8% support, and recommends BUY.";
 
-            analyzeBtn.innerHTML = "Analyze with AI";
+            analyzeBtn.innerHTML = "✅ Analysis Complete";
             analyzeBtn.disabled = false;
 
         }, 2000);
